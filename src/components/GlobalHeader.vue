@@ -50,11 +50,12 @@ const doMenuClick = (key: string) => {
 };
 
 const store = useStore();
-setTimeout(() => {
-  store.dispatch("user/getLoginUser", {
-    userName: "阿通",
-  });
-}, 3000);
+// setTimeout(() => {
+//   store.dispatch("user/getLoginUser", {
+//     userName: "阿通",
+//     role: "admin",
+//   });
+// }, 3000);
 </script>
 
 <style scoped>
