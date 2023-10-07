@@ -1,5 +1,5 @@
 <template>
-  <a-row id="globalHader" style="margin-bottom: 16px" align="center">
+  <a-row id="globalHader" align="center" :wrap="false">
     <a-col flex="auto">
       <a-menu
         mode="horizontal"
