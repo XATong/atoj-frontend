@@ -16,7 +16,7 @@
             <div class="title">领航 OJ</div>
           </div>
         </a-menu-item>
-        <a-menu-item v-for="item in routes" :key="item.path">
+        <a-menu-item v-for="item in visibleRoutes" :key="item.path">
           {{ item.name }}
         </a-menu-item>
       </a-menu>
@@ -28,12 +28,31 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 import { routes } from "../router/routes";
+import checkAccess from "@/acccess/checkAccess";
+import ACCESS_ENUM from "@/acccess/accessEnum";
 
 const router = useRouter();
+const store = useStore();
+
+// 展示在菜单的路由数组
+const visibleRoutes = computed(() => {
+  return routes.filter((item, index) => {
+    if (item.meta?.hideInMenu) {
+      return false;
+    }
+    // 根据权限过滤菜单
+    if (
+      !checkAccess(store.state.user.loginUser, item?.meta?.access as string)
+    ) {
+      return false;
+    }
+    return true;
+  });
+});
 
 // 默认主页
 const selectedKeys = ref(["/"]);
@@ -49,13 +68,12 @@ const doMenuClick = (key: string) => {
   });
 };
 
-const store = useStore();
-// setTimeout(() => {
-//   store.dispatch("user/getLoginUser", {
-//     userName: "阿通",
-//     role: "admin",
-//   });
-// }, 3000);
+setTimeout(() => {
+  store.dispatch("user/getLoginUser", {
+    userName: "阿通",
+    userRole: ACCESS_ENUM.ADMIN,
+  });
+}, 3000);
 </script>
 
 <style scoped>
