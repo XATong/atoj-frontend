@@ -22,7 +22,7 @@
       </a-menu>
     </a-col>
     <a-col flex="100px">
-      <!-- <div>{{ store.state.user?.loginUser?.userName ?? "未登录" }}</div> -->
+      <!-- 用户头像展示， 补充个人信息、登出、注册、登录功能-->
       <div class="userAvatar">
         <a-dropdown trigger="hover">
           <a-avatar shape="circle">

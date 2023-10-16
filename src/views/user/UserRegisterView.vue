@@ -62,11 +62,11 @@
 import { reactive } from "vue";
 import { UserControllerService, UserRegisterRequest } from "../../../generated";
 import { Message } from "@arco-design/web-vue";
-import { useStore } from "vuex";
+// import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
-const store = useStore();
+// const store = useStore();
 const form = reactive({
   userAccount: "",
   userPassword: "",
