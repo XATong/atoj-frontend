@@ -3,20 +3,19 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type Question = {
-    acceptedNum?: number;
-    answer?: string;
+import type { UserVO } from './UserVO';
+
+export type PostVO = {
     content?: string;
     createTime?: string;
     favourNum?: number;
+    hasFavour?: boolean;
+    hasThumb?: boolean;
     id?: number;
-    isDelete?: number;
-    judgeCase?: string;
-    judgeConfig?: string;
-    submitNum?: number;
-    tags?: string;
+    tagList?: Array<string>;
     thumbNum?: number;
     title?: string;
     updateTime?: string;
+    user?: UserVO;
     userId?: number;
 };

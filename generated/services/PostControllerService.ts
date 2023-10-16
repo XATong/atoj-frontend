@@ -4,35 +4,34 @@
 /* eslint-disable */
 import type { BaseResponse_boolean_ } from '../models/BaseResponse_boolean_';
 import type { BaseResponse_long_ } from '../models/BaseResponse_long_';
-import type { BaseResponse_Page_Question_ } from '../models/BaseResponse_Page_Question_';
-import type { BaseResponse_Page_QuestionVO_ } from '../models/BaseResponse_Page_QuestionVO_';
-import type { BaseResponse_QuestionVO_ } from '../models/BaseResponse_QuestionVO_';
+import type { BaseResponse_Page_PostVO_ } from '../models/BaseResponse_Page_PostVO_';
+import type { BaseResponse_PostVO_ } from '../models/BaseResponse_PostVO_';
 import type { DeleteRequest } from '../models/DeleteRequest';
-import type { QuestionAddRequest } from '../models/QuestionAddRequest';
-import type { QuestionEditRequest } from '../models/QuestionEditRequest';
-import type { QuestionQueryRequest } from '../models/QuestionQueryRequest';
-import type { QuestionUpdateRequest } from '../models/QuestionUpdateRequest';
+import type { PostAddRequest } from '../models/PostAddRequest';
+import type { PostEditRequest } from '../models/PostEditRequest';
+import type { PostQueryRequest } from '../models/PostQueryRequest';
+import type { PostUpdateRequest } from '../models/PostUpdateRequest';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 
-export class QuestionControllerService {
+export class PostControllerService {
 
     /**
-     * addQuestion
-     * @param questionAddRequest questionAddRequest
+     * addPost
+     * @param postAddRequest postAddRequest
      * @returns BaseResponse_long_ OK
      * @returns any Created
      * @throws ApiError
      */
-    public static addQuestionUsingPost(
-questionAddRequest: QuestionAddRequest,
+    public static addPostUsingPost(
+postAddRequest: PostAddRequest,
 ): CancelablePromise<BaseResponse_long_ | any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/api/question/add',
-            body: questionAddRequest,
+            url: '/api/post/add',
+            body: postAddRequest,
             errors: {
                 401: `Unauthorized`,
                 403: `Forbidden`,
@@ -42,18 +41,18 @@ questionAddRequest: QuestionAddRequest,
     }
 
     /**
-     * deleteQuestion
+     * deletePost
      * @param deleteRequest deleteRequest
      * @returns BaseResponse_boolean_ OK
      * @returns any Created
      * @throws ApiError
      */
-    public static deleteQuestionUsingPost(
+    public static deletePostUsingPost(
 deleteRequest: DeleteRequest,
 ): CancelablePromise<BaseResponse_boolean_ | any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/api/question/delete',
+            url: '/api/post/delete',
             body: deleteRequest,
             errors: {
                 401: `Unauthorized`,
@@ -64,19 +63,19 @@ deleteRequest: DeleteRequest,
     }
 
     /**
-     * editQuestion
-     * @param questionEditRequest questionEditRequest
+     * editPost
+     * @param postEditRequest postEditRequest
      * @returns BaseResponse_boolean_ OK
      * @returns any Created
      * @throws ApiError
      */
-    public static editQuestionUsingPost(
-questionEditRequest: QuestionEditRequest,
+    public static editPostUsingPost(
+postEditRequest: PostEditRequest,
 ): CancelablePromise<BaseResponse_boolean_ | any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/api/question/edit',
-            body: questionEditRequest,
+            url: '/api/post/edit',
+            body: postEditRequest,
             errors: {
                 401: `Unauthorized`,
                 403: `Forbidden`,
@@ -86,17 +85,17 @@ questionEditRequest: QuestionEditRequest,
     }
 
     /**
-     * getQuestionVOById
+     * getPostVOById
      * @param id id
-     * @returns BaseResponse_QuestionVO_ OK
+     * @returns BaseResponse_PostVO_ OK
      * @throws ApiError
      */
-    public static getQuestionVoByIdUsingGet(
+    public static getPostVoByIdUsingGet(
 id?: number,
-): CancelablePromise<BaseResponse_QuestionVO_> {
+): CancelablePromise<BaseResponse_PostVO_> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/question/get/vo',
+            url: '/api/post/get/vo',
             query: {
                 'id': id,
             },
@@ -109,19 +108,19 @@ id?: number,
     }
 
     /**
-     * listQuestionByPage
-     * @param questionQueryRequest questionQueryRequest
-     * @returns BaseResponse_Page_Question_ OK
+     * listPostVOByPage
+     * @param postQueryRequest postQueryRequest
+     * @returns BaseResponse_Page_PostVO_ OK
      * @returns any Created
      * @throws ApiError
      */
-    public static listQuestionByPageUsingPost(
-questionQueryRequest: QuestionQueryRequest,
-): CancelablePromise<BaseResponse_Page_Question_ | any> {
+    public static listPostVoByPageUsingPost(
+postQueryRequest: PostQueryRequest,
+): CancelablePromise<BaseResponse_Page_PostVO_ | any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/api/question/list/page',
-            body: questionQueryRequest,
+            url: '/api/post/list/page/vo',
+            body: postQueryRequest,
             errors: {
                 401: `Unauthorized`,
                 403: `Forbidden`,
@@ -131,19 +130,19 @@ questionQueryRequest: QuestionQueryRequest,
     }
 
     /**
-     * listQuestionVOByPage
-     * @param questionQueryRequest questionQueryRequest
-     * @returns BaseResponse_Page_QuestionVO_ OK
+     * listMyPostVOByPage
+     * @param postQueryRequest postQueryRequest
+     * @returns BaseResponse_Page_PostVO_ OK
      * @returns any Created
      * @throws ApiError
      */
-    public static listQuestionVoByPageUsingPost(
-questionQueryRequest: QuestionQueryRequest,
-): CancelablePromise<BaseResponse_Page_QuestionVO_ | any> {
+    public static listMyPostVoByPageUsingPost(
+postQueryRequest: PostQueryRequest,
+): CancelablePromise<BaseResponse_Page_PostVO_ | any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/api/question/list/page/vo',
-            body: questionQueryRequest,
+            url: '/api/post/my/list/page/vo',
+            body: postQueryRequest,
             errors: {
                 401: `Unauthorized`,
                 403: `Forbidden`,
@@ -153,19 +152,19 @@ questionQueryRequest: QuestionQueryRequest,
     }
 
     /**
-     * listMyQuestionVOByPage
-     * @param questionQueryRequest questionQueryRequest
-     * @returns BaseResponse_Page_QuestionVO_ OK
+     * searchPostVOByPage
+     * @param postQueryRequest postQueryRequest
+     * @returns BaseResponse_Page_PostVO_ OK
      * @returns any Created
      * @throws ApiError
      */
-    public static listMyQuestionVoByPageUsingPost(
-questionQueryRequest: QuestionQueryRequest,
-): CancelablePromise<BaseResponse_Page_QuestionVO_ | any> {
+    public static searchPostVoByPageUsingPost(
+postQueryRequest: PostQueryRequest,
+): CancelablePromise<BaseResponse_Page_PostVO_ | any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/api/question/my/list/page/vo',
-            body: questionQueryRequest,
+            url: '/api/post/search/page/vo',
+            body: postQueryRequest,
             errors: {
                 401: `Unauthorized`,
                 403: `Forbidden`,
@@ -175,19 +174,19 @@ questionQueryRequest: QuestionQueryRequest,
     }
 
     /**
-     * updateQuestion
-     * @param questionUpdateRequest questionUpdateRequest
+     * updatePost
+     * @param postUpdateRequest postUpdateRequest
      * @returns BaseResponse_boolean_ OK
      * @returns any Created
      * @throws ApiError
      */
-    public static updateQuestionUsingPost(
-questionUpdateRequest: QuestionUpdateRequest,
+    public static updatePostUsingPost(
+postUpdateRequest: PostUpdateRequest,
 ): CancelablePromise<BaseResponse_boolean_ | any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/api/question/update',
-            body: questionUpdateRequest,
+            url: '/api/post/update',
+            body: postUpdateRequest,
             errors: {
                 401: `Unauthorized`,
                 403: `Forbidden`,

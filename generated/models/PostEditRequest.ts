@@ -3,15 +3,9 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import type { JudgeCase } from './JudgeCase';
-import type { JudgeConfig } from './JudgeConfig';
-
-export type QuestionEditRequest = {
-    answer?: string;
+export type PostEditRequest = {
     content?: string;
     id?: number;
-    judgeCase?: Array<JudgeCase>;
-    judgeConfig?: JudgeConfig;
     tags?: Array<string>;
     title?: string;
 };

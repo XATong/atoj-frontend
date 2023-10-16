@@ -3,7 +3,9 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type JudgeCase = {
-    input?: string;
-    output?: string;
+export type PostUpdateRequest = {
+    content?: string;
+    id?: number;
+    tags?: Array<string>;
+    title?: string;
 };

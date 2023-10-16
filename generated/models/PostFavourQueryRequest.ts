@@ -3,13 +3,13 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type QuestionSubmitQueryRequest = {
+import type { PostQueryRequest } from './PostQueryRequest';
+
+export type PostFavourQueryRequest = {
     current?: number;
-    language?: string;
     pageSize?: number;
-    questionId?: number;
+    postQueryRequest?: PostQueryRequest;
     sortField?: string;
     sortOrder?: string;
-    status?: number;
     userId?: number;
 };

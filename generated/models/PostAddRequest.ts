@@ -3,15 +3,8 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type QuestionQueryRequest = {
-    answer?: string;
+export type PostAddRequest = {
     content?: string;
-    current?: number;
-    id?: number;
-    pageSize?: number;
-    sortField?: string;
-    sortOrder?: string;
     tags?: Array<string>;
     title?: string;
-    userId?: number;
 };
