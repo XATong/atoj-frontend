@@ -3,6 +3,8 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type PostThumbAddRequest = {
-    postId?: number;
+export type QuestionSubmitAddRequest = {
+    code?: string;
+    language?: string;
+    questionId?: number;
 };
