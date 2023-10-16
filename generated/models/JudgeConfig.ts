@@ -3,6 +3,8 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type PostFavourAddRequest = {
-    postId?: number;
+export type JudgeConfig = {
+    memoryLimit?: number;
+    stackLimit?: number;
+    timeLimit?: number;
 };
