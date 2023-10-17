@@ -2,6 +2,7 @@
   <code-editor :value="codeValue" :handle-change="onCodeChange" />
   <md-editor :value="mdValue" :handle-change="onMdChange" />
 </template>
+
 <script setup lang="ts">
 import MdEditor from "@/components/MdEditor.vue";
 import { ref } from "vue";
@@ -18,6 +19,15 @@ const codeValue = ref<string>(
 const onCodeChange = (v: string) => {
   codeValue.value = v;
 };
+// const mdValue = ref();
+// const codeValue = ref();
+// const onMdChange = (v: string) => {
+//   mdValue.value = v;
+// };
+
+// const onCodeChange = (v: string) => {
+//   codeValue.value = v;
+// };
 </script>
 
 <style scoped></style>

@@ -2,7 +2,6 @@
   <Editor
     :value="value"
     :mode="mode"
-    :locale="locale"
     :plugins="plugins"
     @change="handleChange"
   />
@@ -14,7 +13,6 @@ import highlight from "@bytemd/plugin-highlight";
 import math from "@bytemd/plugin-math";
 import { Editor, Viewer } from "@bytemd/vue-next";
 import { ref, withDefaults, defineProps } from "vue";
-import locale from "../locales/zh_Hans.json";
 
 /**
  * 定义组件属性类型
@@ -79,7 +77,7 @@ import mathLocale from "@bytemd/plugin-math/locales/zh_Hans.json";
 
 interface Props {
   value: string;
-  mode: string;
+  mode?: string;
   handleChange: (v: string) => void;
 }
 
