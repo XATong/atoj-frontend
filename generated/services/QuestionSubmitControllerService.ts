@@ -2,6 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { BaseResponse_List_string_ } from '../models/BaseResponse_List_string_';
 import type { BaseResponse_long_ } from '../models/BaseResponse_long_';
 import type { BaseResponse_Page_QuestionSubmitVO_ } from '../models/BaseResponse_Page_QuestionSubmitVO_';
 import type { QuestionSubmitAddRequest } from '../models/QuestionSubmitAddRequest';
@@ -27,6 +28,23 @@ questionSubmitAddRequest: QuestionSubmitAddRequest,
             method: 'POST',
             url: '/api/question_submit/',
             body: questionSubmitAddRequest,
+            errors: {
+                401: `Unauthorized`,
+                403: `Forbidden`,
+                404: `Not Found`,
+            },
+        });
+    }
+
+    /**
+     * getCodeLanguage
+     * @returns BaseResponse_List_string_ OK
+     * @throws ApiError
+     */
+    public static getCodeLanguageUsingGet(): CancelablePromise<BaseResponse_List_string_> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/question_submit/language',
             errors: {
                 401: `Unauthorized`,
                 403: `Forbidden`,

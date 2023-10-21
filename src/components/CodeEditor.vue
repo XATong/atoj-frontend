@@ -1,52 +1,9 @@
-<!-- <template>
-  <div id="code-editor" ref="codeEditorRef" style="min-height: 400px" />
-  {{ value }}
-  <a-button @click="fillValue">填充值</a-button>
-</template>
-
-<script setup lang="ts">
-import * as monaco from "monaco-editor";
-import { onMounted, ref, toRaw } from "vue";
-const codeEditorRef = ref();
-const codeEditor = ref();
-const value = ref("hello world");
-const fillValue = () => {
-  if (!codeEditor.value) {
-    return;
-  }
-  // 改变值
-  toRaw(codeEditor.value).setValue("新的值");
-};
-onMounted(() => {
-  if (!codeEditorRef.value) {
-    return;
-  }
-  // Hover on each property to see its docs!
-  codeEditor.value = monaco.editor.create(codeEditorRef.value, {
-    value: value.value,
-    language: "java",
-    automaticLayout: true,
-    colorDecorators: true,
-    minimap: {
-      enabled: true,
-    },
-    readOnly: false,
-    theme: "vs-dark",
-    // lineNumbers: "off",
-    // roundedSelection: false,
-    // scrollBeyondLastLine: false,
-  });
-  // 编辑 监听内容变化
-  codeEditor.value.onDidChangeModelContent(() => {
-    console.log("目前内容为：", toRaw(codeEditor.value).getValue());
-  });
-});
-</script>
-
-<style scoped></style> -->
-
 <template>
-  <div id="code-editor" ref="codeEditorRef" style="min-height: 400px" />
+  <div
+    id="code-editor"
+    ref="codeEditorRef"
+    style="min-height: 400px; height: 80vh"
+  />
 </template>
 
 <script setup lang="ts">
@@ -90,7 +47,7 @@ onMounted(() => {
     automaticLayout: true,
     colorDecorators: true,
     minimap: {
-      enabled: true,
+      enabled: false,
     },
     readOnly: false,
     theme: "vs-dark",
@@ -102,7 +59,7 @@ onMounted(() => {
     disableLayerHinting: true, // 等宽优化
     emptySelectionClipboard: false, // 空选择剪切板
     selectionClipboard: true, // 选择剪切板
-    codeLens: true, // 代码镜头
+    // codeLens: true, // 代码镜头
     scrollBeyondLastLine: true, // 滚动完最后一行后再滚动一屏幕
     accessibilitySupport: "off", // 辅助功能支持  "auto" | "off" | "on"
     lineNumbers: "on", // 行号 取值： "on" | "off" | "relative" | "interval" | function
