@@ -51,7 +51,7 @@
               <a-option>java</a-option>
               <a-option>c</a-option>
               <a-option>cpp</a-option>
-              <a-option>go</a-option>
+              <!-- <a-option>go</a-option> -->
             </a-select>
           </a-form-item>
         </a-form>
@@ -74,7 +74,6 @@ import { ref, withDefaults, defineProps, onMounted } from "vue";
 import {
   QuestionControllerService,
   QuestionSubmitAddRequest,
-  QuestionSubmitControllerService,
   QuestionVO,
 } from "../../../generated";
 import message from "@arco-design/web-vue/es/message";
@@ -104,7 +103,7 @@ const loadData = async () => {
 
 const form = ref<QuestionSubmitAddRequest>({
   language: "java",
-  code: "class Solution{\n" + "\n" + "}",
+  code: "public class Main{\n" + "\n" + "}",
 });
 
 /**
@@ -114,7 +113,7 @@ const doSubmit = async () => {
   if (!question.value?.id) {
     return;
   }
-  const res = await QuestionSubmitControllerService.doQuestionSubmitUsingPost({
+  const res = await QuestionControllerService.doQuestionSubmitUsingPost({
     ...form.value,
     questionId: question.value.id,
   });
