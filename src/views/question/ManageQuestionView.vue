@@ -122,17 +122,17 @@ const columns = [
       {
         title: "时间限制",
         dataIndex: "timeLimit",
-        width: 100,
+        width: 80,
       },
       {
         title: "内存限制",
         dataIndex: "memoryLimit",
-        width: 100,
+        width: 80,
       },
       {
         title: "堆栈限制",
         dataIndex: "stackLimit",
-        width: 100,
+        width: 80,
       },
     ],
     width: 300,
@@ -149,7 +149,7 @@ const columns = [
     title: "创建时间",
     dataIndex: "createTime",
     slotName: "createTime",
-    width: 150,
+    width: 180,
   },
   {
     title: "操作",

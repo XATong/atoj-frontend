@@ -4,10 +4,10 @@
       <a-form-item field="questionId" label="题号" style="min-width: 240px">
         <a-input v-model="searchParams.questionId" placeholder="请输入题号" />
       </a-form-item>
-      <a-form-item field="language" label="编程语言" style="min-width: 240px">
+      <a-form-item field="language" label="编程语言" style="min-width: 120px">
         <a-select
           v-model="searchParams.language"
-          :style="{ width: '320px' }"
+          :style="{ width: '120px' }"
           placeholder="请选择编程语言"
         >
           <a-option>java</a-option>
